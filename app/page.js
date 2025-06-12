@@ -1,5 +1,6 @@
 "use client"
 import Button from "@/components/ui/button";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -7,13 +8,11 @@ export default function Home() {
     <div>
       <main>
         <div className="flex gap-20 mt-30 justify-center">
-          <div onClick={()=>{
-            
-          }}>
-            <Button title="Create" />
+          <div>
+            <Link href="/create"><Button title="Create" /></Link>
           </div>
           <div>
-            <Button title="Join" />
+            <Link href="/join"><Button title="Join" /></Link>
           </div>
         </div>
       </main>

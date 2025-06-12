@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
+
 @custom-variant dark (&:is(.dark *));
 
 nav{
@@ -21,6 +23,8 @@ input{
   border-radius: 18px;
   border: 2px solid black;
 }
+
+
 
 
 @theme inline {
