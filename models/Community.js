@@ -1,10 +1,11 @@
 import mongoose from "mongoose";
 
+
 const communitySchema = new mongoose.Schema({
   name: { type: String, required: true },
   code: { type: String, required: true, unique: true }, // random code
   description: { type: String },
-  members: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+ members: [String],
   songs: [{
     title: String,
     addedBy: { type: mongoose.Schema.Types.ObjectId, ref: "User" },

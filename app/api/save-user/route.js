@@ -3,10 +3,10 @@ import User from "@/models/User";
 import connectDb from "@/db/connectDB";
 
 export async function POST(req) {
-  const { username, email, joinedCommunities, profilepic } = await req.json();
+  const { username, email, joinedCommunities, profilepic, clerkId } = await req.json();
 
-  if (!username) {
-    return new Response("Username is required", { status: 400 });
+  if (!username||!clerkId) {
+    return new Response("Username and clerkId are required", { status: 400 });
   }
 
   await connectDb();
@@ -15,9 +15,10 @@ export async function POST(req) {
 
   if (!existingUser) {
     await User.create({
+      clerkId,
       username,
       email,
-      joinedCommunities,
+      joinedCommunities:joinedCommunities||[],
       profilepic,
     });
 

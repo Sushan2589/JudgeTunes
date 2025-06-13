@@ -1,9 +1,10 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
+  clerkId: { type: String, required: true, unique: true },
   username: { type: String, required: true, unique: true },
   email: { type: String, required: true, unique: true },
-  joinedCommunities: [{ type: mongoose.Schema.Types.ObjectId, ref: "Community" }],
+  joinedCommunities: [String],
   profilepic: String,
 }, { timestamps: true });
 

@@ -1,3 +1,5 @@
+"use client"
+
 import React from "react";
 import {
   SignedIn,
@@ -32,13 +34,17 @@ const Navbar = () => {
             <div>
               {/*Sign In button */}
               <SignInButton mode="modal">
+                <div>
                 <SignIn />
+                </div>
               </SignInButton>
             </div>
             <div>
               {/*Sign Up button */}
               <SignUpButton mode="modal">
+                <div>
                 <SignUp />
+                </div>
               </SignUpButton>
             </div>
           </div>
