@@ -51,11 +51,16 @@ export async function POST(req) {
 })
   }
 
+
+ 
   // Add user to the members array  
   await db.collection('communities').updateOne(
     { code },
     { $addToSet: { members: userId } } // $addToSet avoids duplicates
   );
+  
+  
+  console.log(community.code)
 
   await db.collection('users').updateOne(
   {clerkId:userId},

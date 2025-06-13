@@ -36,7 +36,7 @@ export async function POST(req) {
 
     await User.findOneAndUpdate(
       { clerkId: userId }, 
-      { $addToSet: { joinedCommunities: community._id } }
+      { $addToSet: { joinedCommunities: community.code } }
     );
 
     return new Response(JSON.stringify(community), {
