@@ -1,7 +1,6 @@
 // app/api/join-community/route.js
 import { getAuth } from '@clerk/nextjs/server';
 import clientPromise from '@/lib/mongodb'; // Your MongoDB utility
-import { ObjectId } from 'mongodb';
 
 
 

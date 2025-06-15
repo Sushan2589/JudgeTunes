@@ -4,6 +4,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
+import { ToastContainer,toast,Slide } from "react-toastify";
 
 const join = () => {
   const [Code, setCode] = useState("");
@@ -46,7 +47,12 @@ const join = () => {
 
     if (res.ok) {
       setCode("");
-      router.push("/");
+      toast("Community Joined")
+      setTimeout(() => {
+        router.push("/");
+        
+      }, 3000);
+      
     } else {
       const data = await res.json();
       setError(data.error || "Unexpected error occurred. Redirecting...");
@@ -103,6 +109,19 @@ const join = () => {
           />
         </div>
       </form>
+      <ToastContainer
+position="top-right"
+autoClose={5000}
+hideProgressBar={false}
+newestOnTop={false}
+closeOnClick={false}
+rtl={false}
+pauseOnFocusLoss
+draggable
+pauseOnHover
+theme="light"
+transition={Slide}
+/>
     </div>
   );
 };

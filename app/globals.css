@@ -24,7 +24,17 @@ input{
   border: 2px solid black;
 }
 
+.parent {
+display: grid;
+grid-template-columns: repeat(5, 1fr);
+grid-template-rows: repeat(5, 1fr);
+grid-column-gap: 310px;
+grid-row-gap: 10px;
 
+}
+
+.div2 { grid-area: 1 / 4 / 6 / 6; }
+.div1 { grid-area: 1 / 1 / 6 / 4; }
 
 
 @theme inline {

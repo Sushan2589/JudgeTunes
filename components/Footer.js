@@ -1,5 +1,6 @@
 "use client"
 import React from 'react'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
@@ -15,9 +16,8 @@ const Footer = () => {
 
       <div>
         <ul className='flex gap-10'>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
+            <Link href="/">Home</Link>
+            
         </ul>
       </div>
     </footer>

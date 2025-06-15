@@ -1,7 +1,7 @@
 import { clerkMiddleware } from "@clerk/nextjs/server";
 
 export default clerkMiddleware();
-console.log("THIS IS WORKING THIS WORKS THIS IS WORKIG THIS WORKS")
+console.log("Confirmation that middleware works")
 
 export const config = {
   

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import {
@@ -11,6 +11,7 @@ import {
 import Link from "next/link";
 import SignIn from "./ui/signIn";
 import SignUp from "./ui/signUp";
+import Button from "./ui/button";
 
 const Navbar = () => {
   return (
@@ -35,7 +36,7 @@ const Navbar = () => {
               {/*Sign In button */}
               <SignInButton mode="modal">
                 <div>
-                <SignIn />
+                  <SignIn />
                 </div>
               </SignInButton>
             </div>
@@ -43,20 +44,34 @@ const Navbar = () => {
               {/*Sign Up button */}
               <SignUpButton mode="modal">
                 <div>
-                <SignUp />
+                  <SignUp />
                 </div>
               </SignUpButton>
             </div>
           </div>
         </SignedOut>
         <SignedIn>
-          <UserButton
-            appearance={{
-              elements: {
-                userButtonAvatarBox: "w-16 h-16", // Tailwind classes for 64x64 px, or use inline styles
-              },
-            }}
-          />
+          <div className="flex gap-10">
+            <Link href={"/my-communities"}>
+              <div
+                className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-black rounded-full border border-[#616467]
+          hover:bg-[#616467] hover:text-white
+          focus:outline-none focus:ring-2 focus:ring-[#616467]
+          dark:text-gray-300 dark:border-gray-500 dark:hover:bg-gray-600 dark:hover:text-white
+          transition duration-200"
+              >
+                Communities
+              </div>
+            </Link>
+
+            <UserButton
+              appearance={{
+                elements: {
+                  userButtonAvatarBox: "w-16 h-16", // Tailwind classes for 64x64 px, or use inline styles
+                },
+              }}
+            />
+          </div>
         </SignedIn>
       </div>
     </nav>
