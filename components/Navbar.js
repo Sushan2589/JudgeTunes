@@ -11,63 +11,43 @@ import {
 import Link from "next/link";
 import SignIn from "./ui/signIn";
 import SignUp from "./ui/signUp";
-import Button from "./ui/button";
+import Logo from "./Logo";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between p-10 rounded-4xl m-8">
+    <nav className="flex flex-col sm:flex-row justify-between items-center gap-6 p-6 sm:p-10 rounded-4xl m-4 sm:m-8">
       <div>
-        <Link href="/">JudgeTunes</Link>
+        <Link href="/" className="text-xl font-bold"><Logo/></Link>
       </div>
-      <div>
-        {" "}
-        {/*OUTER DIV IF WANT TO ADD EXTRA CONTENT IN NAVBAR style here */}
-        {/* <div>
-         <ul className="flex gap-8">
-          <li>HOME</li>
-          <li>CONTACT</li>
-        </ul> 
-        </div>
-         */}
+      <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6">
         <SignedOut>
-          <div className="flex gap-6">
-            {/*all content of signedout in this div */}
-            <div>
-              {/*Sign In button */}
-              <SignInButton mode="modal">
-                <div>
-                  <SignIn />
-                </div>
-              </SignInButton>
-            </div>
-            <div>
-              {/*Sign Up button */}
-              <SignUpButton mode="modal">
-                <div>
-                  <SignUp />
-                </div>
-              </SignUpButton>
-            </div>
+          <div className="flex gap-4 sm:gap-6">
+            <SignInButton mode="modal">
+              <div>
+                <SignIn />
+              </div>
+            </SignInButton>
+            <SignUpButton mode="modal">
+              <div>
+                <SignUp />
+              </div>
+            </SignUpButton>
           </div>
         </SignedOut>
+
         <SignedIn>
-          <div className="flex gap-10">
-            <Link href={"/my-communities"}>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center">
+            <Link href="/my-communities">
               <div
-                className="py-2.5 px-5 me-2 mb-2 text-sm font-medium text-black rounded-full border border-[#616467]
-          hover:bg-[#616467] hover:text-white
-          focus:outline-none focus:ring-2 focus:ring-[#616467]
-          dark:text-gray-300 dark:border-gray-500 dark:hover:bg-gray-600 dark:hover:text-white
-          transition duration-200"
+                className="py-2.5 px-5 text-sm font-medium text-black rounded-full border border-[#616467] hover:bg-[#616467] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#616467] dark:text-gray-300 dark:border-gray-500 dark:hover:bg-gray-600 dark:hover:text-white transition duration-200 text-center"
               >
                 Communities
               </div>
             </Link>
-
             <UserButton
               appearance={{
                 elements: {
-                  userButtonAvatarBox: "w-16 h-16", // Tailwind classes for 64x64 px, or use inline styles
+                  userButtonAvatarBox: "w-10 h-10 sm:w-16 sm:h-16",
                 },
               }}
             />
