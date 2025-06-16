@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ObjectId } from "mongodb";
 import Button from "@/components/ui/button";
 import { auth } from "@clerk/nextjs/server";
+import Image from "next/image";
 
 const CommunityPage = async ({ params }) => {
   const { userId } = await auth(); // Clerk-authenticated user
@@ -102,7 +103,7 @@ const CommunityPage = async ({ params }) => {
               <div key={user.clerkId}>
                 <div className="flex gap-3 text-lg font-medium items-center">
                   <div className="w-10 h-10">
-                    <img
+                    <Image
                       className="rounded-full object-cover w-full h-full"
                       src={user.profilepic}
                       alt={`${user.username}'s profile`}

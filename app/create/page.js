@@ -6,7 +6,7 @@ import Button from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useUser } from "@clerk/nextjs";
 
-const create = () => {
+const Create = () => {
   const router = useRouter();
   const [form, setForm] = useState({ group: "", description: "" });
   const { user, isSignedIn } = useUser();
@@ -130,4 +130,4 @@ const create = () => {
   );
 };
 
-export default create;
+export default Create;

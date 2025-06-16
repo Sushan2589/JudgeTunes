@@ -6,7 +6,7 @@ import { useUser } from "@clerk/nextjs";
 import { useRouter } from "next/navigation";
 import { ToastContainer,toast,Slide } from "react-toastify";
 
-const join = () => {
+const Join = () => {
   const [Code, setCode] = useState("");
   const { user, isSignedIn } = useUser();
   const router = useRouter();
@@ -126,4 +126,4 @@ transition={Slide}
   );
 };
 
-export default join;
+export default Join;
