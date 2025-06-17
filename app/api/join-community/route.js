@@ -28,7 +28,7 @@ export async function POST(req) {
   const client = await clientPromise;
   const db = client.db('JudgeTunes-dev');
   const community = await db.collection('communities').findOne({ code });
-  console.log(community.name)
+  
 
 
    
