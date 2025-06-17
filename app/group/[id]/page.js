@@ -63,7 +63,7 @@ const CommunityPage = async ({ params }) => {
       <p className="text-sm text-gray-700 dark:text-gray-300 text-center mt-2">
         Share this community code to invite others:
         <span className="ml-1 font-mono text-[#616467] bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-xl font-bold text-xl">
-          PTPQa
+          {community.code}
         </span>
       </p>
 
