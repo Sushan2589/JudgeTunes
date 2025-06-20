@@ -103,11 +103,8 @@ const CommunityPage = async ({ params }) => {
               <div key={user.clerkId}>
                 <div className="flex gap-3 text-lg font-medium items-center">
                   <div className="w-10 h-10">
-                    <Image
-                      className="rounded-full object-cover w-full h-full"
-                      src={user.profilepic}
-                      alt={`${user.username}'s profile`}
-                    />
+                   
+                    <img  className="rounded-full object-cover w-full h-full" src ={user.profilepic}></img>
                   </div>
                   <div>@{user.username}</div>
                 </div>
